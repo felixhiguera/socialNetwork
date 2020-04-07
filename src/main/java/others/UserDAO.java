@@ -6,8 +6,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * <h1>UserDAO</h1>
+ * Class for making the request to the database, it contains the methods createAccountDB, loginDB, editUserDB, listOfUsersDB
+ *
+ * @author Felix Higuera
+ * @version 1.1
+ * @since 2020
+ * */
 public class UserDAO {
+    /**
+     * method createAccountDB makes the request for creating an account with the query
+     * @param user type User from the method class createAccount in the class userService
+     *
+     * */
 
     public static void createAccountDB(User user){
 
@@ -29,7 +41,12 @@ public class UserDAO {
           System.out.println(ex);
       }
 
-
+    /** method loginDB makes the request to the DB for loggin with the account
+     * if the user and password are correct, it will print "logged
+     * else it will print login failed
+     * @param user type User bring fom the method login from the class UserService
+     * @return User it returns an object type User for sending to the method menuSession in the main class
+     * */
     }
     public static User loginDB(User user){
         Conexion con = new Conexion ();
@@ -58,6 +75,10 @@ public class UserDAO {
         }
             return null;
     }
+    /**
+     * the method editUserDB edit the values of the user account and send the request to the DB
+     * @param user type User bring from the editUser in the class UserService
+     * */
     public static void editUserDB(User user){
         Conexion con = new Conexion ();
 
@@ -79,6 +100,10 @@ public class UserDAO {
             System.out.println(e);
         }
     }
+    /**
+     * the method listOfUsersDB print the of users from the db
+     * @param usuario type User is from the method listOfUsers from the class UserService
+     * */
     public static void listOfUsersDB(User usuario){
         Conexion con = new Conexion ();
         try(Connection cone = con.get_connection()){

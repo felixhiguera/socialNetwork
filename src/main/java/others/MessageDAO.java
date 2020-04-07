@@ -4,8 +4,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
+/**
+ * <h1>Message DAO</h1>
+ * <p>
+ *     This class send the request made it in the program to the database
+ * </p>
+ *
+ * @author Felix Higuera
+ * @version 1.1
+ * @since 2020
+ * */
 public class MessageDAO {
+
+
+
+    /**
+     * <h1>createMessageDB</h1>
+     * <p>this method is for creating a message and send the request to the database</p>
+     *
+     * @param message It is the message receive it from the class MessageService.createMessage()
+     * */
     public static void createMessageDB(Message message) {
         Conexion con = new Conexion();
         try (Connection cone = con.get_connection()) {
@@ -25,6 +43,10 @@ public class MessageDAO {
             System.out.println(e);
         }
     }
+    /**
+     * <h1>listMessageDB</h1>
+     * <p>this method show the list of messages from the user, this class is called from the MessageService.ListMessage()</p>
+     * */
 
     public static void listMessageDB() {
         Conexion con = new Conexion();
@@ -49,11 +71,18 @@ public class MessageDAO {
             System.out.println(e);
         }
     }
+    /**
+     * <h1>deleteMessageDB</h1>
+     * <p>this method is for deleting a message in the user logged and send the request to the database</p>
+     *
+     * @param messa It is the message receive it from the class MessageService.deleteMessage()
+     * */
     public static void deleteMessageDB(Message messa){
+        //it creates a object type Conexion
         Conexion con = new Conexion();
-        System.out.println(messa.getId_message());
-        System.out.println(messa.getId_user());
+        //it calls the conexion to the database and save in the object cone (type Connection)
         try(Connection cone = con.get_connection()) {
+
             PreparedStatement ps = null;
             try {
                 String query = "delete from mensajes where id_mensaje = ? and id_usuario = ?";

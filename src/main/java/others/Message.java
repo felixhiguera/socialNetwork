@@ -1,6 +1,14 @@
 package others;
-
+/**
+ * <h1>Message</h1>
+ * <p>this class is the template of the messages</p>
+ *
+ * @author felix Higuera
+ * @version 1.1
+ * @since 2020
+ * */
 public class Message {
+
     int id_message;
     String message;
     String date;
@@ -11,16 +19,26 @@ public class Message {
     public Message(){
 
     }
-
+    /**
+     * The Constructor
+     * @param id_message
+     * @param id_user
+     * */
     public Message(int id_message, int id_user) {
         this.id_message = id_message;
         this.id_user = id_user;
     }
+    /**
+     * The constructor
+     * @param message
+     * @param id_user
+     * */
 
     public Message(String message, int id_user) {
         this.message = message;
         this.id_user = id_user;
     }
+
 
     public int getId_message() {
         return id_message;

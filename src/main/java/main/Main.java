@@ -6,7 +6,18 @@ import others.User;
 import others.UserService;
 
 import java.util.Scanner;
-
+/**
+ * <h1>Main</h1>
+ * <p>
+ *     It visualize the main menu of the program<br>
+ *         the user can visualize the options Signup, Login and Exit.<br>
+ *             also it has the submenu write a message, list the messages,etc.
+ * </p>
+ *
+ * @author Felix Higuera
+ * @version 1.1
+ * @since 2020
+ * */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
